@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharif Iddrisu Portfolio Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-gray-200">
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="sticky top-0 z-50 border-b border-gray-700/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black tracking-tighter text-white hover:text-cyan-400 transition duration-300">SHARIF_IDDRISU</a>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">About</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">Projects</a>
+                <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">Skills</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">Contact</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-300 focus:outline-none" aria-label="Toggle mobile menu">
+                    <div class="w-6 h-6 relative">
+                        <span class="burger-line burger-line-1 block w-full h-0.5 absolute top-1 left-0"></span>
+                        <span class="burger-line burger-line-2 block w-full h-0.5 absolute top-3 left-0"></span>
+                        <span class="burger-line burger-line-3 block w-full h-0.5 absolute top-5 left-0"></span>
+                    </div>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="md:hidden bg-black/80 backdrop-blur-md absolute top-full left-0 w-full shadow-lg opacity-0 transform -translate-y-4 pointer-events-none z-40">
+            <a href="#about" class="block px-6 py-4 text-gray-300 hover:bg-cyan-900/50 hover:text-cyan-300 mobile-menu-link">About</a>
+            <a href="#projects" class="block px-6 py-4 text-gray-300 hover:bg-cyan-900/50 hover:text-cyan-300 mobile-menu-link">Projects</a>
+            <a href="#skills" class="block px-6 py-4 text-gray-300 hover:bg-cyan-900/50 hover:text-cyan-300 mobile-menu-link">Skills</a>
+            <a href="#contact" class="block px-6 py-4 text-gray-300 hover:bg-cyan-900/50 hover:text-cyan-300 mobile-menu-link">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+             <div class="absolute inset-0 bg-gradient-to-br from-black/30 via-gray-900/50 to-black/90 z-0"></div>
+             <div class="container mx-auto px-6 relative z-10">
+                 <div class="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16">
+                     <div class="text-center md:text-left md:w-1/2 lg:w-3/5">
+                          <h1 class="text-5xl md:text-7xl font-black text-white mb-4 uppercase tracking-wider">Sharif Iddrisu</h1>
+                          <p class="text-xl md:text-3xl text-cyan-400 mb-10 font-light tracking-wide">Computer Science Student | Budding Software Engineer | Ethical Hacking and Cybersecurity</p>
+                          <a href="#projects" class="hero-button font-semibold py-3 px-10 rounded-full text-lg shadow-lg shadow-cyan-500/30 inline-block">
+                               Explore Projects
+                          </a>
+                     </div>
+                     <div class="md:w-1/2 lg:w-2/5 flex justify-center md:justify-end">
+                          <img src="p2.jpg"
+                                 alt="Your Name - Profile Picture"
+                                 class="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-cyan-500/60 shadow-xl shadow-cyan-500/20 transition-transform duration-300 hover:scale-105">
+                                 </div>
+                 </div>
+             </div>
+        </section>
+
+        <section id="about" class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-white uppercase tracking-wider">About Me</h2>
+            <div class="max-w-3xl mx-auto text-center text-gray-300">
+                <p class="text-lg mb-4">
+                    Greetings! I'm [Your Name], a driven Computer Science student at [Your University/College] with a deep fascination for [mention specific areas like AI, distributed systems, quantum computing, etc.]. I thrive on dissecting complex problems and architecting elegant, efficient solutions.
+                </p>
+                <p class="text-lg mb-6">
+                    My toolkit includes [mention 1-2 key languages/frameworks], and I'm constantly exploring the bleeding edge of technology. My ambition is to contribute to projects that redefine boundaries and shape the future.
+                </p>
+                <a href="#" class="inline-block bg-cyan-600 text-white font-semibold py-2 px-6 rounded-md hover:bg-cyan-700 transition duration-300 shadow-md hover:shadow-lg">
+                    View Resume
+                </a>
+            </div>
+        </section>
+
+        <section id="projects" class="bg-black/50">
+             <div class="container mx-auto px-6">
+                 <h2 class="text-4xl font-bold text-center mb-16 text-white uppercase tracking-wider">Projects</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                     <div class="project-card rounded-lg overflow-hidden flex flex-col">
+                         <img src="https://placehold.co/600x400/0f172a/67e8f9?text=Project+Alpha" alt="Project 1 Screenshot" class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                         <div class="p-6 flex flex-col flex-grow">
+                             <h3 class="text-xl font-semibold mb-2 text-cyan-400">Project Alpha</h3>
+                             <p class="text-gray-400 mb-4 flex-grow">Description of a futuristic or complex project. Focus on innovation or technical challenge.</p>
+                             <p class="text-sm text-gray-500 mb-4"><strong>Tech:</strong> Rust, WebAssembly, Three.js</p>
+                             <div class="mt-auto flex space-x-4">
+                                 <a href="#" target="_blank" class="text-cyan-500 hover:text-cyan-300 font-medium transition duration-300">Live Demo</a>
+                                 <a href="#" target="_blank" class="text-cyan-500 hover:text-cyan-300 font-medium transition duration-300">Source Code</a>
+                             </div>
+                         </div>
+                     </div>
+
+                     <div class="project-card rounded-lg overflow-hidden flex flex-col">
+                         <img src="https://placehold.co/600x400/0f172a/a5f3fc?text=Project+Beta" alt="Project 2 Screenshot" class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                         <div class="p-6 flex flex-col flex-grow">
+                             <h3 class="text-xl font-semibold mb-2 text-cyan-400">Project Beta</h3>
+                             <p class="text-gray-400 mb-4 flex-grow">Another project, perhaps focusing on data, AI, or backend systems.</p>
+                             <p class="text-sm text-gray-500 mb-4"><strong>Tech:</strong> Python, TensorFlow, Kubernetes</p>
+                             <div class="mt-auto flex space-x-4">
+                                 <a href="#" target="_blank" class="text-cyan-500 hover:text-cyan-300 font-medium transition duration-300">Case Study</a>
+                                 <a href="#" target="_blank" class="text-cyan-500 hover:text-cyan-300 font-medium transition duration-300">Source Code</a>
+                             </div>
+                         </div>
+                      </div>
+
+                     <div class="project-card rounded-lg overflow-hidden flex flex-col">
+                         <img src="https://placehold.co/600x400/0f172a/ccfbf1?text=Project+Gamma" alt="Project 3 Screenshot" class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                         <div class="p-6 flex flex-col flex-grow">
+                             <h3 class="text-xl font-semibold mb-2 text-cyan-400">Project Gamma</h3>
+                             <p class="text-gray-400 mb-4 flex-grow">A description focusing on UI/UX, perhaps a web application with a modern frontend.</p>
+                             <p class="text-sm text-gray-500 mb-4"><strong>Tech:</strong> TypeScript, React, Next.js, Vercel</p>
+                             <div class="mt-auto flex space-x-4">
+                                 <a href="#" target="_blank" class="text-cyan-500 hover:text-cyan-300 font-medium transition duration-300">Live Demo</a>
+                                 <a href="#" target="_blank" class="text-cyan-500 hover:text-cyan-300 font-medium transition duration-300">Source Code</a>
+                             </div>
+                         </div>
+                      </div>
+
+                 </div>
+             </div>
+        </section>
+
+        <section id="skills" class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-white uppercase tracking-wider">Core Competencies</h2>
+            <div class="max-w-5xl mx-auto text-center">
+                  <div class="mb-10">
+                      <h3 class="text-2xl font-semibold mb-6 text-cyan-400">Languages & Paradigms</h3>
+                      <div class="flex flex-wrap justify-center gap-3 text-gray-300">
+                          <span class="skill-item">Python</span>
+                          <span class="skill-item">Java</span>
+                          <span class="skill-item">JavaScript/TypeScript</span>
+                          <span class="skill-item">Rust (Learning)</span>
+                          <span class="skill-item">SQL/NoSQL</span>
+                          <span class="skill-item">OOP</span>
+                          <span class="skill-item">Functional Programming</span>
+                      </div>
+                  </div>
+                  <div class="mb-10">
+                      <h3 class="text-2xl font-semibold mb-6 text-cyan-400">Technologies & Frameworks</h3>
+                      <div class="flex flex-wrap justify-center gap-3 text-gray-300">
+                          <span class="skill-item">React/Next.js</span>
+                          <span class="skill-item">Node.js</span>
+                          <span class="skill-item">Spring Boot</span>
+                          <span class="skill-item">Docker & Kubernetes</span>
+                          <span class="skill-item">AWS/GCP (Basics)</span>
+                          <span class="skill-item">TensorFlow/PyTorch</span>
+                          <span class="skill-item">Git</span>
+                      </div>
+                  </div>
+                  <div>
+                      <h3 class="text-2xl font-semibold mb-6 text-cyan-400">Concepts & Domains</h3>
+                      <div class="flex flex-wrap justify-center gap-3 text-gray-300">
+                          <span class="skill-item">Data Structures & Algorithms</span>
+                          <span class="skill-item">Distributed Systems</span>
+                          <span class="skill-item">Machine Learning</span>
+                          <span class="skill-item">API Design (REST/GraphQL)</span>
+                          <span class="skill-item">Cybersecurity Fundamentals</span>
+                          <span class="skill-item">Agile Development</span>
+                      </div>
+                  </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-black/50">
+             <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-4xl font-bold mb-8 text-white uppercase tracking-wider">Connect</h2>
+                 <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                     Seeking challenging opportunities and collaborations. Let's build the future together.
+                 </p>
+
+                 <div class="max-w-lg mx-auto mb-16">
+                     <h3 class="text-3xl font-semibold mb-8 text-cyan-400">Send a Message</h3>
+                     <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 gap-6">
+                         <div>
+                            <input type="hidden" name="access_key" value="94aea3cd-7864-41df-8bd8-b4410da94d78">
+                             <label for="name" class="sr-only">Name</label>
+                             <input type="text" id="name" name="name" placeholder="Your Name" required
+                                    class="w-full px-4 py-3 bg-gray-800 text-gray-200 border border-gray-700 rounded-md focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 placeholder-gray-500">
+                         </div>
+                         <div>
+                             <label for="email" class="sr-only">Email</label>
+                             <input type="email" id="email" name="email" placeholder="Your Email" required
+                                    class="w-full px-4 py-3 bg-gray-800 text-gray-200 border border-gray-700 rounded-md focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 placeholder-gray-500">
+                         </div>
+                         <div>
+                             <label for="message" class="sr-only">Message</label>
+                             <textarea id="message" name="message" rows="6" placeholder="Your Message" required
+                                       class="w-full px-4 py-3 bg-gray-800 text-gray-200 border border-gray-700 rounded-md focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 placeholder-gray-500"></textarea>
+                         </div>
+                         <div>
+                             <button type="submit" class="w-full bg-cyan-600 text-white font-semibold py-3 rounded-md hover:bg-cyan-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black">
+                                 Send Message
+                             </button>
+                         </div>
+                     </form>
+                 </div>
+
+                 <div class="mb-8">
+                      <h3 class="text-3xl font-semibold mb-8 text-cyan-400">Find me on</h3>
+                       <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4">
+                          <a href="mailto:sharifiddrisu156@gmail.com" class="text-gray-400 hover:text-cyan-400 transition duration-300 text-4xl" aria-label="Send Email">
+                              <i class="fas fa-envelope"></i>
+                          </a>
+                          <a href="https://www.linkedin.com/in/sharifiddrisu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-gray-400 hover:text-cyan-400 transition duration-300 text-4xl" aria-label="LinkedIn Profile">
+                              <i class="fab fa-linkedin"></i>
+                          </a>
+                          <a href="https://github.com/noblex1" target="_blank" class="text-gray-400 hover:text-cyan-400 transition duration-300 text-4xl" aria-label="GitHub Profile">
+                              <i class="fab fa-github"></i>
+                          </a>
+                          <a href="https://wa.me/+2330206558156" target="_blank" class="text-gray-400 hover:text-cyan-400 transition duration-300 text-4xl" aria-label="WhatsApp Message">
+                              <i class="fab fa-whatsapp"></i>
+                          </a>
+                          <a href="https://www.facebook.com/share/1HoNretURW/" target="_blank" class="text-gray-400 hover:text-cyan-400 transition duration-300 text-4xl" aria-label="Facebook Profile">
+                              <i class="fab fa-facebook"></i>
+                          </a>
+                          <a href="https://youtube.com/@sharifiddrisutech?si=mR4-aHvcBujF82vE" target="_blank" class="text-gray-400 hover:text-cyan-400 transition duration-300 text-4xl" aria-label="YouTube Channel">
+                              <i class="fab fa-youtube"></i>
+                          </a>
+                      </div>
+                 </div>
+             </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900/50 text-gray-500 py-6 border-t border-gray-700/50">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>© 2025 SHARIF IDDRISU. All rights reserved. | Designed with a futuristic vision.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
